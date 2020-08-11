@@ -1,7 +1,10 @@
 <template>
   <div class="Toolbar">
     <md-field>
-      <md-input placeholder="Type to filter..." v-model="filterValue"></md-input>
+      <md-input
+        placeholder="Type to filter..."
+        v-model="filterValue"
+      ></md-input>
     </md-field>
     <router-link to="/new">
       <md-button class="md-raised md-primary">
@@ -22,10 +25,10 @@ export default Vue.extend({
         return this.$store.state.list.filter;
       },
       set: function(value) {
-        this.$store.commit('handleFilterChange', value);
+        this.$store.commit("handleFilterChange", value);
       }
     }
-  },
+  }
 });
 </script>
 
@@ -41,4 +44,3 @@ export default Vue.extend({
   }
 }
 </style>
-

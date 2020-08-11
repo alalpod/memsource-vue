@@ -14,15 +14,15 @@ import Overview from "@/components/Overview.vue"; // @ is an alias to /src
 import Table from "@/components/Table.vue";
 import Toolbar from "@/components/Toolbar.vue";
 
-import { mapState, mapActions } from 'vuex';
-
 export default Vue.extend({
   name: "List",
   components: {
-    Overview, Toolbar, Table
+    Overview,
+    Toolbar,
+    Table
   },
   created() {
-    this.$store.dispatch('fetchProjects');
+    this.$store.dispatch("fetchProjects");
   }
 });
 </script>

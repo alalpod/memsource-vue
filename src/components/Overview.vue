@@ -1,39 +1,48 @@
 <template>
   <div class="Overview">
-      <h2>Overview</h2>
-      <h3>Projects</h3>
-      <div>
-        <md-content class="md-elevation-3" v-for="(status) in config.projectStatuses" v-bind:key="status">
-          <h4>{{messages.status[status]}}</h4>
-          <p>{{overview.projectStatusesCount[status]}}</p>
-        </md-content>
-      </div>
-      <div>
-        <md-content class="md-elevation-3">
-          <h4>Projects Overdue</h4>
-          <p>{{overview.overdueProjectsCount}}</p>
-        </md-content>
-        <md-content class="md-elevation-3">
-          <h4>Most prominent language{{overview.mostProminentLangs.length > 1 ? 's' : ''}}</h4>
-          <p>{{overview.mostProminentLangs.join(', ')}}</p>
-        </md-content>
-      </div>
+    <h2>Overview</h2>
+    <h3>Projects</h3>
+    <div>
+      <md-content
+        class="md-elevation-3"
+        v-for="status in config.projectStatuses"
+        v-bind:key="status"
+      >
+        <h4>{{ messages.status[status] }}</h4>
+        <p>{{ overview.projectStatusesCount[status] }}</p>
+      </md-content>
     </div>
+    <div>
+      <md-content class="md-elevation-3">
+        <h4>Projects Overdue</h4>
+        <p>{{ overview.overdueProjectsCount }}</p>
+      </md-content>
+      <md-content class="md-elevation-3">
+        <h4>
+          Most prominent language{{
+            overview.mostProminentLangs.length > 1 ? "s" : ""
+          }}
+        </h4>
+        <p>{{ overview.mostProminentLangs.join(", ") }}</p>
+      </md-content>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { mapState } from 'vuex';
-import config from '@/config';
-import messages from '@/constants/messages';
+import { mapState } from "vuex";
+import config from "@/config";
+import messages from "@/constants/messages";
 
 export default Vue.extend({
   name: "Overview",
   computed: mapState({
-    overview: 'overview',
+    overview: "overview"
   }),
   data: () => ({
-    config, messages,
+    config,
+    messages
   })
 });
 </script>
