@@ -1,31 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.List-Page {
+  margin: 0 .5rem;
 }
 
-#nav {
-  padding: 30px;
+.Project-Form-Page {
+  width: 800px;
+  margin: 2rem auto;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  form {
+    padding: 1rem;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
+  .Form-Row {
+    margin: 0 0 1rem;
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .Buttons-Row {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+
+    & > button, & > a {
+      margin: 0 0 0 0.5rem;
     }
   }
 }
